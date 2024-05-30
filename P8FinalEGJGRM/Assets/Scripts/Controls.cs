@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Controls : MonoBehaviour
 {
+    public float forwardSpeed = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,9 @@ public class Controls : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
-            transform.Translate(Vector3.forward* Time.deltaTime);
+        {
+            transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
+        }
+            
     }
 }
