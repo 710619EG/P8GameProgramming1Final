@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class Controls : MonoBehaviour
 {
+    public float sideStrafeSpeed = 3f;
+    public float backwardSpeed = 2.5f;
     public float forwardSpeed = 5f;
-    // Start is called before the first frame update
+
     void Start()
     {
         
@@ -19,6 +21,17 @@ public class Controls : MonoBehaviour
         {
             transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
         }
-            
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(Vector3.back * backwardSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(Vector3.left * sideStrafeSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(Vector3.right * sideStrafeSpeed * Time.deltaTime);
+        }
     }
 }
