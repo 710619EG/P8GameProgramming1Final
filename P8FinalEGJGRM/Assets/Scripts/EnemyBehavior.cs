@@ -13,8 +13,6 @@ public class EnemyBehavior : MonoBehaviour
 
     public int health;
 
-    public float speed;
-
     //patroling
     public Vector3 walkPoint;
     bool walkPointSet;
