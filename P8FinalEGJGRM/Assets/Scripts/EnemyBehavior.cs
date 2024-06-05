@@ -13,6 +13,8 @@ public class EnemyBehavior : MonoBehaviour
 
     public int health;
 
+    public float speed;
+
     //patroling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -60,7 +62,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         if (walkPointSet)
         {
-            agent.SetDestination(walkPoint);
+            agent.SetDestination(walkPoint * speed);
         }
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
@@ -84,7 +86,7 @@ public class EnemyBehavior : MonoBehaviour
     }
     void ChasePlayer()
     {
-        agent.SetDestination(player.position);
+        agent.SetDestination(player.position * speed);
     }
     void AttackPlayer()
     {
@@ -112,5 +114,12 @@ public class EnemyBehavior : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, sightRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
