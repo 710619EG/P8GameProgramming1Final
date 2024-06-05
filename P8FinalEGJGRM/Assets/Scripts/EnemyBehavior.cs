@@ -62,7 +62,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         if (walkPointSet)
         {
-            agent.SetDestination(walkPoint * speed);
+            agent.SetDestination(walkPoint);
         }
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
@@ -86,7 +86,7 @@ public class EnemyBehavior : MonoBehaviour
     }
     void ChasePlayer()
     {
-        agent.SetDestination(player.position * speed);
+        agent.SetDestination(player.position);
     }
     void AttackPlayer()
     {
