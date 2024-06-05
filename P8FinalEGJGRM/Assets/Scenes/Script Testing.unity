@@ -165,7 +165,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 1
   m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 5
   m_ObstacleAvoidanceType: 4
 --- !u!65 &551006940
 BoxCollider:
@@ -247,7 +247,7 @@ Transform:
   m_GameObject: {fileID: 551006937}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.98, z: -3.57}
+  m_LocalPosition: {x: 6.85, y: 1.03, z: 1.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -292,20 +292,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc761c6d8d4b6849a5252caf53ea887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  player: {fileID: 0}
+  agent: {fileID: 551006939}
+  player: {fileID: 1221143197}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
-  health: 0
+    m_Bits: 128
+  health: 1
+  speed: 5
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 0
-  timeBetweenAttacks: 0
-  sightRange: 0
-  attackRange: 0
+  walkPointRange: 3.6
+  timeBetweenAttacks: 1
+  sightRange: 15
+  attackRange: 5
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!1 &1039581669
@@ -462,6 +463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground_03
       objectReference: {fileID: 0}
+    - target: {fileID: 8957304962413023527, guid: 3f9b178ccd3b86f4ebbfc1f5a2815e56, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -479,7 +484,7 @@ GameObject:
   - component: {fileID: 1221143196}
   - component: {fileID: 1221143198}
   - component: {fileID: 1221143195}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -554,7 +559,7 @@ Transform:
   m_GameObject: {fileID: 1221143194}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.796, z: 0}
+  m_LocalPosition: {x: -5.9, y: 1.796, z: -17.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -626,7 +631,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 209
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -637,7 +642,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: c59a0bb3047a09c4b9571d661ca83d6d, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1703181330
 GameObject:
@@ -651,7 +656,7 @@ GameObject:
   - component: {fileID: 1703181333}
   - component: {fileID: 1703181332}
   - component: {fileID: 1703181331}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
