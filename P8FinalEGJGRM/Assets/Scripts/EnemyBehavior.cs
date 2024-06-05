@@ -13,6 +13,8 @@ public class EnemyBehavior : MonoBehaviour
 
     public int health;
 
+    public Animator animator;
+
     //patroling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -30,6 +32,8 @@ public class EnemyBehavior : MonoBehaviour
     {
         player = GameObject.Find("Main Camera").transform;
         agent = GetComponent<NavMeshAgent>(); 
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -93,11 +97,16 @@ public class EnemyBehavior : MonoBehaviour
 
         if(!alreadyAttacked)
         {
-            ///attack code here 
+            //OnCollisionEnter();
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+       // UpdateLives();
+        animator.SetTrigger("Attack");
     }
     void ResetAttack()
     {
