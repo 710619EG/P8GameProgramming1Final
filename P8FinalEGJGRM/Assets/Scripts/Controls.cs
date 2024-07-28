@@ -21,7 +21,16 @@ public class Controls : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
-            animator.SetBool("isWalking", true);
+            while (true)
+            {
+                animator.SetBool("isWalking", true);
+            }
+            
+            
+        }
+        if (!Input.GetKey(KeyCode.W))
+        {
+            animator.SetBool("isWalking", false);
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -38,10 +47,7 @@ public class Controls : MonoBehaviour
             transform.Translate(Vector3.right * sideStrafeSpeed * Time.deltaTime);
             animator.SetBool("isWalking", true);
         }
-        if (!Input.GetKey(KeyCode.W))
-        {
-            animator.SetBool("isWalking", false);
-        }
+        
         y = Input.GetAxis("Mouse X");
         transform.Rotate(0, y, 0, Space.World);
     }
