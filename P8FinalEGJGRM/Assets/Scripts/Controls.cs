@@ -21,12 +21,7 @@ public class Controls : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
-            while (true)
-            {
-                animator.SetBool("isWalking", true);
-            }
-            
-            
+            animator.SetBool("isWalking", true);
         }
         if (!Input.GetKey(KeyCode.W))
         {
